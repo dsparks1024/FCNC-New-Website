@@ -1,0 +1,327 @@
+/* CSS document */
+/* Default styling for the Forest City Nursing & Rehab Center Website */
+/* Copyright 2015 Forest City Nursing & Rehab Center */
+/* Written By: Dominick Sparks */
+/* Last Updated: */
+
+html, body{
+	height: 100%;
+}
+/* Push the footer to the bottom of the screen */
+.wrapper{
+	min-height: 100%;
+	margin: 0 auto -205px;
+}
+footer, .push{
+	height: 205px;
+}
+
+footer{
+	background-image: url('/resources/css/images/footerBGPattern.png');
+	background-repeat: repeat-x;
+	color: white;
+	text-align: center;
+	padding-top: 25px;
+	box-shadow: rgba(0, 0, 0, 0.49) 0px 8px 15px 2px inset;
+}
+footer .footerCopyright{
+	height: 55px;
+}
+footer .footerCopyright p{
+	padding:35px 0px 0px 0px;
+	margin:0px;
+}
+footer .footerLinks{
+	height: 100px;
+	padding-top: 3px;
+}
+footer .footerBottom{
+	padding-top: 15px;
+}
+footer .socialMediaLinks a{
+	height: 50px;
+	width: 50px;
+	display: block;
+	margin-left: 5px;
+	background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer .facebook{
+	 background-image: url('/resources/css/images/facebook.png');
+}
+footer .facebook:hover{
+	 background-image: url('/resources/css/images/facebookH.png');
+}
+footer .email{
+  	background-image: url('/resources/css/images/mail.png');
+}
+footer .email:hover{
+  	background-image: url('/resources/css/images/mailH.png');	
+}
+footer .linkedIn{
+	 background-image: url('/resources/css/images/linkedIn.png');
+}
+footer .linkedIn:hover{
+	 background-image: url('/resources/css/images/linkedInH.png');
+}
+footer .footerImageContainer a img{
+	height: 50px;
+}
+footer .footerImageContainer{
+	padding-right:0px;
+	padding-top: 10px;
+	height: 60px;
+}
+footer .footerImageContainer a{
+	float: right;
+}
+/* End of footer styling */
+
+/* Navbar Styling */
+#mainNav .navbar-brand{
+	padding: 0px;
+	z-index: 50;
+}
+#mainNav img{
+	height:100%;
+}
+#mainNav .navbar-toggle{
+	border: none;
+	color: white;
+	font-size: 22px;
+	line-height: 10px;
+	padding: 5px 0px 0px 0px;
+}
+#mainNav .navbar-toggle:hover{
+	background: none;
+	cursor: pointer;
+}
+#mainNav .navbar-toggle span{
+}
+#mainNav{
+	/*background: maroon url('/resources/css/images/navBarBGPattern.png');
+	background-repeat: repeat-x;*/
+	border: none;
+	background: maroon;
+	margin-bottom: 0px;
+	box-shadow: black 1px 1px 10px 1px;
+	z-index: 50;
+	overflow: hidden;
+}
+#mainNav .navbarLine{
+	width: 100%;
+	height: 1px;
+	background: white;
+	position: absolute;
+	left: 171px;
+	z-index: 0;
+}
+#mainNav .top{
+	top: 5px;
+}
+#mainNav .bottom{
+	top: 45px;
+}
+#mainNav a{
+	color: white;
+	font-size: 16pt;
+	font-family: 'Marcellus SC', serif;
+}
+#mainNav a:hover{
+	color: #ffedca;
+	text-decoration: underline;
+	background: transparent;
+}
+/* style the dropdown menus */
+#mainNav .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+	background: transparent; 
+}
+#mainNav .dropdown-menu{
+	background: maroon;
+	text-align: center;
+}
+#mainNav .navbar-collapse{
+	border: none;
+}
+#mainNav .dropdown .open{
+	background: transparent;
+}
+
+@media (min-width: 979px) {
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+#mainNav .dropdown-menu > li >a:focus, #mainNav .dropdown-menu > li >a:hover{
+	background: transparent;
+}
+/* end of dropdown styling */
+#mainNav .navbar-nav>li{
+ 	float: none;
+ 	text-align: center;
+}
+#mainNav .nav-justified{
+	width: 78%;
+}
+
+/* change the navbar look on smaller devices */
+@media (max-width: 767px){
+/*#mainNav{
+		background: maroon;
+	}
+	#mainNav .nav-justified{
+		width: 100%;
+	}
+	#mainNav .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+	background: maroon;
+	background-repeat: repeat-x;
+	}
+	#mainNav .dropdown-menu{
+		background: #600000;
+	}
+	*/
+}
+/* End of nav bar styling */
+
+/* Footer Styling */
+footer .footerLinks li.linkHeader{
+	font-size: 14pt;
+	list-style: none;
+	margin-left: -15px;
+}
+
+footer .footerLinks li{
+	list-style: none;
+	text-align: left;
+}
+
+footer .socialMediaLinks{
+	list-style: none;
+	display: flex;
+}
+footer .socialMediaLinks img{
+	height: 50px;
+	padding-left: 5px;
+}
+
+/* End Footer Styling */
+
+
+
+/* Content Tile Default Styling */
+
+/* Adjust margins for tiles used as page content to fill entiere width of viewport */
+#pageContent.container-fluid{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+#pageContent .row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.contentTile h1,h2,h3,h4,h5,h6{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	margin: 8px;
+}
+
+.contentTile{
+	margin-top: 8px;
+	padding: 2px;
+	border-bottom: 2px solid gray;
+	vertical-align: middle;
+}
+.contentTile .tileHeadingText h1{
+	text-indent: 25px;
+}
+
+#pageContent .contentTile:first-child{
+	margin-top: 0px;
+}
+#pageContent .contentTile:last-child{
+	border-bottom: none;
+}
+
+/* Vertically center heading text on desktops */
+@media (min-width: 979px) {
+	.contentTile{
+	display: table;
+	}
+	.contentTile .col-md-6{
+		float:none;
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+/* Change tile styling on small devices */
+@media (max-width: 767px){
+	.contentTile .tileHeadingText h1{
+		text-align: center;
+		text-indent: 0px;
+	}
+	.contentTile .tileHeadingText h4{
+		text-align: center;
+	}
+}
+
+/* end of content tile styling */
+.imgFillContainer{
+	max-width: 100%;
+}
+
+.mediaTile{
+	width: 100%;
+}
+
+.mediaTile .croppedImage{
+	max-width: 300px;
+	margin-left: 5%;
+}
+
+/* Change tile styling on small devices */
+@media (max-width: 767px){
+	.carousel img{
+	  width: auto;
+	  height: 190px;
+	  max-height: 190px;
+	  margin: auto;
+	}
+}
+
+.carousel{
+	height: 425px;
+	width: 100%;
+}
+
+.carousel .item{
+	height: 425px;
+}
+
+#slide1{
+	background-image:  url('/resources/images/NursingCenter1.png');
+	background-position: 50% 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+#slide2{
+	background-image: url('/resources/images/NursingCenter2.jpg');
+	background-position: 50% 80%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+#slide3{
+	background-image: url('/28b.jpg');
+	background-position: 50% 81%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+

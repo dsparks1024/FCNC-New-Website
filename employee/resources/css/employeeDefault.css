@@ -1,0 +1,17 @@
+html, body{
+	height: 100%;
+}
+/* Push the footer to the bottom of the screen */
+#wrapper{
+	min-height: 100%;
+	margin: 0 auto -150px;
+}
+footer, .push{
+	height: 150px;
+}
+
+footer{
+	background: gray;
+	color: white;
+	text-align: center;
+}

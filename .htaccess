@@ -1,0 +1,12 @@
+RewriteEngine 	On
+RewriteRule 	^employee/([.]+)?$						employee/index.php?$1							[NC,L]		# Do not modify any requests dealing with the employee site or CMS
+
+# Rewrite anything following /pageName
+# Capture the pageName(%1) in a variable
+
+RewriteRule		^([A-Za-z0-9-]+)?$						index.php?pageName=$1					[NC,N]		# Modify the URL to contain the page name in a $GET variable
+
+# Rewrite anything following /category/pageName
+# Capture the category($1) and pageName($2) in variables
+
+RewriteRule		^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)?$		index.php?category=$1&pageName=$2		[NC,N]		# Modify the URL to contain the page name and category in $GET variables

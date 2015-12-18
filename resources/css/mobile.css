@@ -1,0 +1,103 @@
+/*  Styling for responsive design on smaller devices */
+
+/* Medium and anything smaller */
+@media(max-width:1199px){
+	span{
+		color: ;
+	}
+	
+}
+
+/* Small and anything smaller */
+@media(max-width:992px){ /* was 991px... adjusted to hide footer links at 991px and styling didn't change */
+	span{
+		color:;
+	}
+	.contentTile .tileHeadingText h1{
+		text-align: center;
+		text-indent: 0px;
+	}
+	.contentTile .tileHeadingText h4{
+		text-align: center;
+	}
+	footer .footerLinks{
+		display:none;
+	}
+	footer .socialMediaLinks{
+		width:170px;
+		margin: auto;
+	}
+	footer .footerImageContainer a{
+		float: none;
+	}
+	footer .footerCopyright p{
+	padding:20px 0px 0px 0px;
+	margin:0px;
+	}
+}
+
+/* Small and anything larger */
+@media(min-width:768px){
+	#mainNav .dropdown-menu{
+		max-width: 300px;
+	}
+}
+
+
+
+/* Specifally targeted device styling */
+
+/* Extra Small - phone */
+@media(max-width:767px){
+	span{
+		color: ;
+	}
+	#mainNav .nav-justified{
+		width: 100%;
+	}
+	#mainNav #mainNavigation{
+		background: #d3d3d3;
+		padding: 0px;
+	}
+	#mainNav #mainNavigation ul{
+		padding: 0px;
+		margin: 0px;
+	}
+	#mainNav .dropdown-menu li a{
+		height: 60px;
+		padding-top: 20px;
+	}
+	#mainNav .dropdown a{
+		height: 60px;
+		padding-top: 20px;
+	}
+	#mainNav .dropdown a span.caret{
+		display: none;
+	}
+	#mainNav .dropdown a span.glyphicon{
+		font-size: 18px;
+	}
+	.carousel{
+		height: 250px;
+	}
+	.carousel .item{
+		height: 250px;
+	}
+}
+
+/* Small - iPad Retina portrait*/
+@media(min-width:768px) and (max-width:991px){
+	span{
+	color: ;
+	}
+}
+
+/* Medium -iPad Retina landscape */
+@media(min-width:992px) and (max-width:1199px){
+	span{
+		color: ;
+	}
+}
+
+/* Large */
+@media(min-width:1200px){}
