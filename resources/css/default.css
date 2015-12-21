@@ -100,14 +100,18 @@ footer .footerImageContainer a{
 #mainNav .navbar-toggle span{
 }
 #mainNav{
-	/*background: maroon url('/resources/css/images/navBarBGPattern.png');
-	background-repeat: repeat-x;*/
 	border: none;
 	background: maroon;
 	margin-bottom: 0px;
 	box-shadow: black 1px 1px 10px 1px;
-	z-index: 50;
+}
+#mainNav .navbarLineContainer{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0px;
 	overflow: hidden;
+	
 }
 #mainNav .navbarLine{
 	width: 100%;
@@ -115,7 +119,6 @@ footer .footerImageContainer a{
 	background: white;
 	position: absolute;
 	left: 171px;
-	z-index: 0;
 }
 #mainNav .top{
 	top: 5px;

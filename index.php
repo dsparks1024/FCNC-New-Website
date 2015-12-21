@@ -24,8 +24,10 @@
 				<div class="container-fluid">
 					<div class="navbar-header">
 						
-						<div class="navbarLine top"></div>
-						<div class="navbarLine bottom"></div>
+						<div class="navbarLineContainer">
+							<div class="navbarLine top"></div>
+							<div class="navbarLine bottom"></div>
+						</div>
 						
 						<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavigation" aria-expanded="false">
 							<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
