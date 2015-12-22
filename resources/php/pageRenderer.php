@@ -54,8 +54,8 @@ function displayHTML($contentTileArray){
 				// col2 contains the header text
 				// col3 contains the body of text
 				$row = new pageTile("mediaTile");
-				$row->addImageColumn("/resources/images/PersonalCare.png","col-md-5 croppedImage");
-				$row->addTextColumn($tile['col3'],"col-md-7");
+				$row->addImageColumn("/resources/images/PersonalCare.png","");
+				$row->addTextColumn($tile['col3'],"");
 				echo $row->build();
 				
 			break;

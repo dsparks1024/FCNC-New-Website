@@ -5,6 +5,13 @@
 	span{
 		color: ;
 	}
+	.contentTile .tileHeadingText h1{
+		font-size: 28pt;
+		text-indent: 0px;
+	}
+	.contentTile .tileHeadingText h4{
+		font-size: 14pt;
+	}
 	
 }
 
@@ -31,9 +38,11 @@
 		float: none;
 	}
 	footer .footerCopyright p{
-	padding:20px 0px 0px 0px;
-	margin:0px;
+		padding:20px 0px 0px 0px;
+		margin:0px;
 	}
+
+	
 }
 
 /* Small and anything larger */

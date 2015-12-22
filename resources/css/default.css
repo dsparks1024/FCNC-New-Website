@@ -97,8 +97,7 @@ footer .footerImageContainer a{
 	background: none;
 	cursor: pointer;
 }
-#mainNav .navbar-toggle span{
-}
+
 #mainNav{
 	border: none;
 	background: maroon;
@@ -111,7 +110,8 @@ footer .footerImageContainer a{
 	width: 100%;
 	left: 0px;
 	overflow: hidden;
-	
+	pointer-events: none;
+	z-index: 1;
 }
 #mainNav .navbarLine{
 	width: 100%;
@@ -232,13 +232,24 @@ footer .socialMediaLinks img{
 
 .contentTile{
 	margin-top: 8px;
-	padding: 2px;
+	padding: 15px;
 	border-bottom: 2px solid gray;
 	vertical-align: middle;
 }
 .contentTile .tileHeadingText h1{
 	text-indent: 25px;
+	font-size: 30pt;
+	color: #454545;
 }
+.contentTile .tileHeadingText h4{
+	font-size: 16pt;
+	color: #696969;
+}
+.contentTile p{
+	font-size: 12pt;
+	color: #454545;
+}
+
 
 #pageContent .contentTile:first-child{
 	margin-top: 0px;
@@ -275,13 +286,8 @@ footer .socialMediaLinks img{
 	max-width: 100%;
 }
 
-.mediaTile{
-	width: 100%;
-}
-
-.mediaTile .croppedImage{
-	max-width: 300px;
-	margin-left: 5%;
+.mediaTile img{
+	border: thin solid black;
 }
 
 /* Change tile styling on small devices */

@@ -1,3 +1,11 @@
+<!--
+
+	Check #navbarLineContainer css3 fix is complient on all browers (IE 8+)
+		- The div was over the nav links and rendered them unclickable...
+
+
+-->
+
 <? include_once('globalConfig.php') ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,13 +40,7 @@
 						<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavigation" aria-expanded="false">
 							<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
 						</button>
-						<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavigation" aria-expanded="false">
-							<span class="sr-only">Toggle Navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button> 
-						-->
+						
 						<a class="navbar-brand" href="/">
 							<img alt="Home" src="/resources/css/images/fcncTextLogo.png">
 						</a>

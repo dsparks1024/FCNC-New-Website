@@ -20,15 +20,17 @@ function addClass($className){
 function addTextColumn($text,$columnClass){
 	$this->text = new html_element("div");
 	$this->text->set('text',$text);
-	$this->text->set('class',$columnClass);
+	$this->text->set('class','col-md-6');
 	$this->row->inject($this->text);
 }
 
 function addImageColumn($imagePath,$columnClass){
+	$div = new html_element("div");
+	$div->set('class','col-md-6');
 	$this->img = new html_element("img");
 	$this->img->set('src',$imagePath);
-	$this->img->set('class',$columnClass);
-	$this->row->inject($this->img);
+	$div->inject($this->img);
+	$this->row->inject($div);
 }
 
 
