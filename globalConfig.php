@@ -10,4 +10,5 @@
 	
 	// Load other necessary php files
 	include_once($root.'/resources/php/pageRenderer.php');
+	
 ?>

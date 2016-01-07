@@ -20,6 +20,9 @@
 	span{
 		color:;
 	}
+	.contentTile{
+		padding: 15px 4px 15px 4px;
+	}
 	.contentTile .tileHeadingText h1{
 		text-align: center;
 		text-indent: 0px;
@@ -52,7 +55,9 @@
 	}
 }
 
+@media(min-width:992px){
 
+}
 
 /* Specifally targeted device styling */
 
@@ -86,12 +91,24 @@
 	#mainNav .dropdown a span.glyphicon{
 		font-size: 18px;
 	}
+	.contentTile img{
+		max-height: 250px;
+		width: auto;
+	}
 	.carousel{
 		height: 250px;
 	}
 	.carousel .item{
 		height: 250px;
 	}
+	#map_canvas{
+		height: 250px;
+	}
+	
+	.sendMessage .well{
+		width: 100%;
+	}
+	
 }
 
 /* Small - iPad Retina portrait*/

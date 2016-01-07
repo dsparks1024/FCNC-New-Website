@@ -16,13 +16,23 @@
 		
 		<link href="/libraries/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/employee/resources/css/employeeDefault.css" rel="stylesheet">
+		
+		<!-- LOAD ONLY IF PERSON IS AN EDITOR OR ADMIN -->
+		<link href="/employee/resources/css/editor.css" rel="stylesheet">
+		
 	</head>
 	
 	<body>
 		
 		<header>
-			<h1>Forest City Nursing & Rehab Center</h1>
-			<h3> Employee Website</h3>
+			<div class="container-fluid">
+				<div class="row">
+						<div class="col-xs-12">
+							<h1>Forest City Nursing & Rehab Center</h1>
+							<h3> Employee Website</h3>
+						</div>
+				</div>
+			</div>
 		</header>
 	
 		<div id="wrapper">
@@ -30,18 +40,29 @@
 				<div class="container-fluid">
 					<div class="row">
 						
-						<div class="col-md-2 well">
-							<ul class="nav nav-pills nav-stacked">
-								<li class="dropdown-header">Useful Pages</li>
+						<div class="col-md-2 leftNavigation">
+							<ul class="nav nav-pills nav-stacked well">
+								<li>Useful Pages</li>
 								<li><a href="index.php?action=display&page=home">Home</a></li>
-								<li class="dropdown-header">Content Management</li>
-								<li><a id="pageEditor" href="index.php?action=editor&editor=page">Page Editor</a></li>
+								<?
+									if($_SESSION['auth'] == 'admin'){
+									 echo "
+										<li>Content Management</li>
+										<li><a id='pageEditor' href='#'>Page Editor</a></li>
+										";
+									}
+								?>
 							</ul>
 						</div> <!-- .col-md-2 -->
 						
 						<div class="col-md-10" id="content">
 							
-							<?	if(isset($_GET['action'])){
+							<!-- Begin Fresh Tilled Soil Video Chat Embed Code -->
+<div id="freshtilledsoil_embed_widget" class="video-chat-widget"></div>
+<script id="fts" src="http://freshtilledsoil.com/embed/webrtc-v5.js?r=FTS0316-CZ6NqG97"></script>
+<!-- End Fresh Tilled Soil Video Chat Embed Code -->
+							
+							<?	/*if(isset($_GET['action'])){
 									if($_GET['action'] == 'display'){
 										echo "display " . $_GET['page'];
 									}else if($_GET['action'] == 'editor'){
@@ -52,7 +73,11 @@
 									//display the home page....
 									
 								}
+								*/
 							?>
+							
+							
+							
 						</div> <!-- .col-md-10 -->
 						
 					</div> <!-- .row -->
@@ -66,6 +91,7 @@
 		</footer>
 		
 	<script src="/libraries/jquery/jquery-1.11.3.min.js"></script>
+	<script src="/employee/resources/js/employeeMain.js"></script>
 	<script src="/employee/resources/js/pageEditor.js"></script>
 	</body>
 	

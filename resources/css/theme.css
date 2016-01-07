@@ -4,8 +4,81 @@
 /* Written By: Dominick Sparks */
 /* Last Updated: */
 
-
 .mediaTile{
-	background: #c9c9c9;
+	background: #c9c9c9;	
+}
+
+.grayPattern{
+	background: url('/resources/css/images/norwegian_rose.png');
+}
+.grayPattern p {
+	color: white;
+	text-shadow: 1px 1px 1px #565656;
+	font-size: 14pt;
+}
+.grayPattern .tileHeadingText h1{
+	color: white;
+	font-weight: 400;
+	font-size: 30pt;
+	text-shadow: 1px 1px 3px #565656;
+}
+.grayPattern .img-circle{
+	border: 6px solid white;
+	box-shadow: 3px 5px 8px 0px #5d5d5d;
+}
+.grayPattern h1, .grayPattern h3{
+	color: white;
+	font-weight: 400;
+	text-shadow: 1px 2px 2px black; 
+}
+
+.activityBackground{
+	background: url('/resources/css/images/xmas.jpg');
+	background-position: 50% 70%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	min-height: 475px;
+}
+.activityBackground .tileText{
+	padding-top: 15%;
+}
+.activityBackground p{
+	color: white;
+	text-shadow: 1px 1px 1px #565656;
+	font-size: 13pt;
+}
+.activityBackground .tileHeadingText h1{
+	color: white;
+	font-weight: 400;
+	font-size: 30pt;
+	text-shadow: 1px 1px 3px #565656;
+}
+.activityBackground .tileHeadingText h4{
+	color: white;
+	font-weight: 200;
+	text-shadow: 1px 1px 3px #565656;
+}
+
+.sendMessage{
+	background: url('/resources/css/images/guestBook.jpg');
+	background-position:left center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+.sendMessage .tileHeadingText h1,.sendMessage .tileHeadingText p{
+	color: white;
+	font-weight: 300;
+}
+.sendMessage .well{
+	background: rgba(232, 232, 232, 0.88);
+	border: none;
+	border-radius: 15px;
+	width: 80%;
+	margin: auto;
+}
+
+.calendarContainer{
 	
 }

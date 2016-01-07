@@ -17,10 +17,21 @@ function addClass($className){
 	//$this->row->set('class',$className);
 }
 
+function setText($text){
+	$this->row->set('text',$text);
+}
+
 function addTextColumn($text,$columnClass){
 	$this->text = new html_element("div");
 	$this->text->set('text',$text);
-	$this->text->set('class','col-md-6');
+	$this->text->set('class',"col-md-6 $columnClass");
+	$this->row->inject($this->text);
+}
+
+function addsmTextColumn($text,$columnClass){
+	$this->text = new html_element("div");
+	$this->text->set('text',$text);
+	$this->text->set('class',"col-sm-6 $columnClass");
 	$this->row->inject($this->text);
 }
 

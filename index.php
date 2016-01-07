@@ -2,8 +2,9 @@
 
 	Check #navbarLineContainer css3 fix is complient on all browers (IE 8+)
 		- The div was over the nav links and rendered them unclickable...
-
-
+		
+	Google Calender API KEY: 	AIzaSyCYO4ZUyfv1YA4q2n9Hi3LaPpr7gLlYlHs
+		
 -->
 
 <? include_once('globalConfig.php') ?>
@@ -18,14 +19,21 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300' rel='stylesheet' type='text/css'>
 		<link href="/libraries/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/resources/css/default.css" rel="stylesheet">
-		<link href="/resources/css/mobile.css" rel="stylesheet">
 		<link href="/resources/css/theme.css" rel="stylesheet">
+		<link href="/resources/css/mobile.css" rel="stylesheet">
+		
+		
+		<link rel="stylesheet" href="/libraries/fullcalendar-2.5.0/fullcalendar.css" />
+
+		
 		
 	</head>
 	
 	<body>
 	
+	<!--
 	<span class="visible-xs">SIZE XS</span><span class="visible-sm">SIZE SM</span><span class="visible-md">SIZE MD</span><span class="visible-lg">SIZE LG</span>
+	-->
 
 	<header>
 			<nav class="navbar navbar-default" id="mainNav">
@@ -58,23 +66,42 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span> <span class="glyphicon glyphicon-chevron-down visible-xs pull-right"></span> </a>
 								<ul class="dropdown-menu">
-									<li><a href="/services/personalCare">Personal Care</a></li>
-									<li><a href="#">Respite Care</a></li>
-									<li><a href="#">Independent Living</a></li>
+									<li><a href="/personalcare">Personal Care</a></li>
+									<li><a href="/services/respiteCare">Respite Care</a></li>
+									<li><a href="/services/independent">Independent Living</a></li>
 								</ul>
 							</li>
 							<!-- <li><a href="#">About <span class="visible-xs-inline hidden-md hidden-sm visible-lg-inline">Us</span></a></li> -->
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <span class="caret"></span> <span class="glyphicon glyphicon-chevron-down visible-xs pull-right"></span> </a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Contact Information</a></li>
-									<li><a href="#">Leave a Comment</a></li>
+									<li><a href="/contact/contactInformation">Contact Information</a></li>
+									<li><a href="/contact/sendMessage">Leave a Comment</a></li>
 									<li><a href="/contact/staff">Staff Directory</a></li>
 								</ul>
 							</li>
-							<li><a href="#">Search</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span> <span class="glyphicon glyphicon-chevron-down visible-xs pull-right"></span> </a>
+								<ul class="dropdown-menu searchDropdown"> 
+									<li class="dropdown"> 
+									
+										<form id="searchForm">
+										<div class="search input-group" data-initialize="search" role="search">
+									      <input id="searchInput" name="searchInput" class="form-control" placeholder="Search" type="search">
+									      <span class="input-group-btn">
+									        <button class="btn btn-default" type="button" id="submitSearch">
+									          <span class="glyphicon glyphicon-search"></span>
+									          <span class="sr-only">Search</span>
+									        </button>
+									      </span>
+									    </div>
+									    </form>
+									    
+									 </li>				
+								</ul>
+							</li>
 						</ul>
-					</div> <!-- .collase navbar-collapse #NAVBAR_NAME -->
+					</div> <!-- .collase navbar-collapse #mainNavigation -->
 					</div>  <!-- .navbar-header -->
 				</div> <!-- .containter-fluid -->
 			</nav>
@@ -99,7 +126,7 @@
 								  	<div class='item active' id='slide1'>
 								      
 								      <div class='carousel-caption'>
-								       <h1>  </h1>
+								       <h1> </h1>
 								      </div>
 								    </div>
 								    <div class='item' id='slide2'>
@@ -109,7 +136,8 @@
 								    </div>
 								    <div class='item' id='slide3'>
 								      <div class='carousel-caption'>
-								        <h1>  </h1>
+								        <h1> Happy Holidays! </h1>
+								        <h4>From all of the staff at the Forest City Nursing Center</h4>
 								      </div>
 								    </div>
 								    
@@ -128,7 +156,9 @@
 						</div> <!-- .row -->";
 					}	
 				?>
-				<? displayPageContent($_GET['category'],$_GET['pageName']); ?>
+				<? displayPageContent($_GET['category'],$_GET['pageName']); 	
+					
+				?>
 				
 				
 				
@@ -156,7 +186,7 @@
 						<li class="linkHeader">Our Team</li>
 						<li>Staff Directory</li>
 						<li>Join Our Team</li>
-						<li>Employee Login</li>
+						<li><a href="/employee">Employee Login</a></li>
 					</ul>
 				</div> <!-- .col-md-2 -->
 				<div class="col-md-2">
@@ -170,7 +200,7 @@
 				<div class="col-md-2">
 					<ul> 
 						<li class="linkHeader">Contact Us</li>
-						<li>Send a message</li>
+						<li>Send a Message</li>
 						<li>Leave Feedback</li>
 					</ul>
 				</div> <!-- .col-md-2 -->
@@ -188,7 +218,7 @@
 				<div class="col-md-4">
 					 
 					 <div class="socialMediaLinks">
-						<a class="facebook" href="http://www.facebook.com"> </a>
+						<a class="facebook" href="https://www.facebook.com/ForestCityNursingCenter"> </a>
 						<a class="linkedIn" href="http://www.linkedin.com"> </a>
 						<a class="email" href="mailto:fcnc@echoes.net"> </a>
 					 </div>
@@ -209,8 +239,21 @@
 	
 	<script src="/libraries/jquery/jquery-1.11.3.min.js"></script>
 	<script src="/libraries/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	
+	<script src="/libraries/fullcalendar-2.5.0/lib/moment.min.js"></script>
+	<script src="/libraries/fullcalendar-2.5.0/fullcalendar.js"></script>
+	<script src="/libraries/fullcalendar-2.5.0/gcal.js"></script>
+	
+	
 	<script src="/resources/js/main.js"></script>
+	<script src="/resources/js/gCalendar.js"></script>
+	
 	<script>$('.carousel').carousel()</script>
+	
+	
+
+		
+	
 	</body>
 	
 </html>

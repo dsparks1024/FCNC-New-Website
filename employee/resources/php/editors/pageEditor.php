@@ -3,57 +3,83 @@
 	$db = new Database('fcncContent.db.6441590.hostedresource.com','fcncContent','Fcnc@915','fcncContent');
 	$db->setTable('contentTiles');
 	
-	if(isset($_POST['displayPageNames'])){
-		$categories = getCategories($db);
-		getPages($db,$categories);
-	}
-
-
-
-	/* Returns an array of MYSQL rows that are matched based on a column name and value */
-	function getItems($colName,$colValue){
-	}
-	/* Returns an array of unique categories which pages are listed under */
-	function getCategories($db){
-		$results = $db->retrieve();
-		$tableRow = $results->getRow();
-		$categoryArray = array();
-		foreach($tableRow as $row){
-			foreach($row as $field=>$value){
-				// compile a list of categories found in the table 
-				if($field == 'category'){
-					array_push($categoryArray, $value);
-				}
-			}
-		}
-		$categoryArray = array_unique($categoryArray);
-		return $categoryArray;
-	}
-	
-	/* Returns an array of pages associated with a given category */
-	function getPages($db,$categoryArray){
-		
-		$result = array();
-		foreach($categoryArray as $category){
-			$query = $db->retrieve("category",$category);
-			$tableRow = $query->getRow();
-			
-			foreach($tableRow as $row){
-				foreach($row as $field=>$value){
-					if($field == 'pageName'){
-						$result[$category] = 
-					}
-				}
-			}
-		}
-		
-		print_r($result);
-		
-		return $result;
-	}
 	
 	
 	
-Class navObject{
-	public function __construct()
+// Return a select input with the name of all pages on website
+if(isset($_GET['getPagenameList'])){
+	$response = "";
+	$pageNames = getPageNames($db);
+	foreach($pageNames as $pageName){
+		$response .= "<option name='$pageName'>$pageName</option>";
+	}
+	echo $response;
 }
+
+// Return an editable content tiles
+if(isset($_GET['getPageTiles'])){
+	$response = '';
+	
+	$results = $db->retrieve();
+	$tableRow = $results->getRow();
+	$tileArray = array();
+	// Get tile assocaited with given page§
+	foreach($tableRow as $tile){
+		if($tile['pageName'] == $_GET['pageName']){
+			array_push($tileArray, $tile);
+		}
+	}	
+	echo json_encode($tileArray);
+}
+	
+// Save Content Tile 
+if(isset($_GET['saveContentTile'])){
+
+	unset($_GET['saveContentTile']);
+	
+	$fieldNames = array();
+	$fieldValues = array();
+	
+	foreach($_GET as $key => $value){
+			array_push($fieldNames, $key);
+			array_push($fieldValues, $value);
+	}
+	
+	echo $db->update('id',$_GET['id'],$fieldValues,$fieldNames);
+}	
+	
+// Add a new Content Tile to the selected category and pageName
+if(isset($_GET['createNewTile'])){
+	$results = $db->retrieve();
+	$tableRow = $results->getRow(0);
+	$fieldNames;
+	foreach($tableRow as $field => $value){
+		$fieldNames[$field] = "";
+	}
+	unset($fieldNames['id']);
+	$fieldNames['category'] = $_GET['category'];
+	$fieldNames['pageName'] = $_GET['pageName'];
+	$fieldNames['layout'] = 5;
+	
+	echo $db->insert($fieldNames);
+}
+
+	
+/* Returns an array of unique pageNames */
+function getPageNames($db){
+	$results = $db->retrieve();
+	$tableRow = $results->getRow();
+	$pageArray = array();
+	foreach($tableRow as $row){
+		foreach($row as $field=>$value){
+			// compile a list of categories found in the table 
+			if($field == 'pageName'){
+				array_push($pageArray, $value);
+			}
+		}
+	}
+	$pageArray = array_unique($pageArray);
+	$pageArray = array_values($pageArray);
+	return $pageArray;
+}
+

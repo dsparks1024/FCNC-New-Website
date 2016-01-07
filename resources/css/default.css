@@ -79,9 +79,13 @@ footer .footerImageContainer a{
 /* End of footer styling */
 
 /* Navbar Styling */
+
 #mainNav .navbar-brand{
 	padding: 0px;
 	z-index: 50;
+}
+#mainNav .navbar-brand:hover{
+	box-shadow: 1px 1px 15px 1px white;
 }
 #mainNav img{
 	height:100%;
@@ -167,6 +171,13 @@ footer .footerImageContainer a{
 #mainNav .nav-justified{
 	width: 78%;
 }
+#mainNav .searchDropdown{
+	background: transparent;
+	width: 100%;
+	margin-top: -10px;
+	border: none;
+	box-shadow: none;
+}
 
 /* change the navbar look on smaller devices */
 @media (max-width: 767px){
@@ -231,8 +242,7 @@ footer .socialMediaLinks img{
 }
 
 .contentTile{
-	margin-top: 8px;
-	padding: 15px;
+	padding: 30px 15px 15px 15px;
 	border-bottom: 2px solid gray;
 	vertical-align: middle;
 }
@@ -246,10 +256,28 @@ footer .socialMediaLinks img{
 	color: #696969;
 }
 .contentTile p{
+	font-weight: 200;
 	font-size: 12pt;
 	color: #454545;
 }
+.contentTile .contentTileImgContainer img{
+	height:300px;
+	width: 300px;
+	box-shadow: 1px 3px 4px 0px #505050;
+}
+.contentTile .contentTileImgContainer {
+	padding-top: 5%;
+}
+.contentTile .btn-maroon{
+	background: maroon;
+	color: white;
+}
 
+.contentTile img{
+	height: 375px;
+	width: 375px;
+	box-shadow: 1px 3px 4px 0px #505050;
+}
 
 #pageContent .contentTile:first-child{
 	margin-top: 0px;
@@ -258,8 +286,48 @@ footer .socialMediaLinks img{
 	border-bottom: none;
 }
 
+/* Style the employee bio tiles */
+
+.contentTile.employeeBio .employeeImgContainer{
+}
+.contentTile.employeeBio img{
+	height: 175px;
+	width: 175px;
+	box-shadow: 1px 3px 4px 0px #505050;
+}
+.contentTile.employeeBio h1{
+	text-indent: 25px;
+}
+.contentTile.employeeBio p{
+	font-weight: 200;
+	font-size: 12pt;
+}
+
+.contentTile.pageNotFound h1{
+	font-size: 90pt;
+	font-weight: bold;
+}
+.contentTile.pageNotFound{
+	text-align: center;
+}
+
+/* Style thumbnail Navigation */
+.contentTile.thumbnailNav{
+	/*background: maroon url("/resources/css/images/bright-squares.png");*/
+	background: maroon;
+}
+.contentTile.thumbnailNav img{
+	height: 150px;
+	width: 150px;
+}
+
+.contentTile.thumbnailNav .caption h3{
+	text-align: center;
+}
+
+
 /* Vertically center heading text on desktops */
-@media (min-width: 979px) {
+/*@media (min-width: 979px) {
 	.contentTile{
 	display: table;
 	}
@@ -269,16 +337,18 @@ footer .socialMediaLinks img{
 		vertical-align: middle;
 	}
 }
+*/
 
 /* Change tile styling on small devices */
 @media (max-width: 767px){
-	.contentTile .tileHeadingText h1{
+/*	.contentTile .tileHeadingText h1{
 		text-align: center;
 		text-indent: 0px;
 	}
 	.contentTile .tileHeadingText h4{
 		text-align: center;
 	}
+*/
 }
 
 /* end of content tile styling */
@@ -287,7 +357,7 @@ footer .socialMediaLinks img{
 }
 
 .mediaTile img{
-	border: thin solid black;
+	height: 325px;
 }
 
 /* Change tile styling on small devices */
@@ -300,13 +370,33 @@ footer .socialMediaLinks img{
 	}
 }
 
+#map_canvas{
+	height: 435px;
+	width: auto;
+}
+#map_canvas img{
+	box-shadow: none;
+}
+
 .carousel{
-	height: 425px;
+	height: 350px;
 	width: 100%;
 }
 
 .carousel .item{
-	height: 425px;
+	height: 350px;
+}
+
+.carousel .carousel-caption h1{
+	font-weight: 100;
+	font-size: 50pt;
+}
+
+.contactInformationContainer ul{
+	list-style: none;
+}
+.contactInformationContainer li span{
+	padding-right: 10px;
 }
 
 #slide1{
@@ -326,11 +416,15 @@ footer .socialMediaLinks img{
 }
 
 #slide3{
-	background-image: url('/28b.jpg');
-	background-position: 50% 81%;
+	background-image: url('/resources/images/christmas.jpg');
+	background-position: 50% 65%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 }
 
-
+#calendar{
+	max-width: 900px;
+	margin: 0 auto;
+	
+}

@@ -1,3 +1,4 @@
+
 RewriteEngine 	On
 RewriteRule 	^employee/([.]+)?$						employee/index.php?$1							[NC,L]		# Do not modify any requests dealing with the employee site or CMS
 
