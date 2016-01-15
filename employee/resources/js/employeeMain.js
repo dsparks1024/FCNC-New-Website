@@ -16,6 +16,7 @@ function initMainPage(){
 	pageEditorLink.on('click',initPageEditor); // -> loacation: pageEditor.js
 	
 	
+	//pageEditorLink.click();
 
 }
 

@@ -17,15 +17,14 @@
 		<title>Forest City Nursing & Rehab Center</title>
 		<link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link href="/libraries/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/resources/css/default.css" rel="stylesheet">
 		<link href="/resources/css/theme.css" rel="stylesheet">
 		<link href="/resources/css/mobile.css" rel="stylesheet">
-		
+			
 		
 		<link rel="stylesheet" href="/libraries/fullcalendar-2.5.0/fullcalendar.css" />
-
-		
 		
 	</head>
 	
@@ -66,6 +65,9 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span> <span class="glyphicon glyphicon-chevron-down visible-xs pull-right"></span> </a>
 								<ul class="dropdown-menu">
+									<li><a href="/services/skilledNursing">Skilled Nursing</a></li>
+									<li><a href="/services/rehabilitation">Rehabilitation</a></li>
+									<li><a href="/services/hospice">Hospice</a></li>
 									<li><a href="/personalcare">Personal Care</a></li>
 									<li><a href="/services/respiteCare">Respite Care</a></li>
 									<li><a href="/services/independent">Independent Living</a></li>
@@ -85,11 +87,11 @@
 								<ul class="dropdown-menu searchDropdown"> 
 									<li class="dropdown"> 
 									
-										<form id="searchForm">
+										<form class="searchForm">
 										<div class="search input-group" data-initialize="search" role="search">
-									      <input id="searchInput" name="searchInput" class="form-control" placeholder="Search" type="search">
+									      <input id="searchInput" name="searchInput" class="form-control searchInput" placeholder="Search" type="search">
 									      <span class="input-group-btn">
-									        <button class="btn btn-default" type="button" id="submitSearch">
+									        <button class="btn btn-default submitSearch" type="button" id="submitSearch">
 									          <span class="glyphicon glyphicon-search"></span>
 									          <span class="sr-only">Search</span>
 									        </button>
@@ -112,7 +114,7 @@
 			<div class="container-fluid" id="pageContent">
 				<? 
 					if($_GET['category'] == '' && $_GET['pageName'] == ''){
-						echo "<div class='row>'>
+						echo "<div class='row contentTile>'>
 							<div id='carousel-example-generic' class='carousel slide' data-ride='carousel'>
 								  <!-- Indicators -->
 								  <ol class='carousel-indicators'>
@@ -126,7 +128,8 @@
 								  	<div class='item active' id='slide1'>
 								      
 								      <div class='carousel-caption'>
-								       <h1> </h1>
+								       <h5>Welcome to the </h5>
+								       <h2>Forest City Nursing & Rehab Center</h2>
 								      </div>
 								    </div>
 								    <div class='item' id='slide2'>
@@ -169,16 +172,26 @@
 	<div class="push"></div> <!-- .push -->
 	</div>  <!-- .wrapper -->
 	
-	<footer>
+	<footer class="mainFooter">
 		<div class="container-fluid">
 			<div class="row footerLinks hidden-xs">
-				<div class="col-md-1"></div>
 				<div class="col-md-2">
 					<ul> 
 						<li class="linkHeader">Services</li>
-						<li>Respite Care</li>
-						<li>Rehab</li>
-						<li>Therapy</li>
+						<li><a href="/services/skilledNursing">Skilled Nursing</a></li>
+						<li><a href="/services/rehabilitation">Rehabilitation</a></li>
+						<li><a href="/services/hospice">Hospice</a></li>
+						<li><a href="/services/respiteCare">Respite Care</a></li>
+						<li><a href="/services/independant">Independent Living</a></li>
+					</ul>
+				</div> <!-- .col-md-2 -->
+				<div class="col-md-2">
+					<ul> 
+						<li class="linkHeader">Personal Care</li>
+						<li><a href="/personalCare">Information</a></li>
+						<li><a href="/personalCare/admissions">Admissions</a></li>
+						<li><a href="/personalCare/activities">Activities</a></li>
+						<li><a href="/information/admissions">Schedule Tour</a></li>
 					</ul>
 				</div> <!-- .col-md-2 -->
 				<div class="col-md-2">
@@ -211,7 +224,7 @@
 						<li>Schedule a Tour</li>
 					</ul>
 				</div> <!-- .col-md-2 -->
-				<div class="col-md-1"></div>
+				
 			</div> <!-- .row -->
 			
 			<div class="row footerBottom">
@@ -219,13 +232,15 @@
 					 
 					 <div class="socialMediaLinks">
 						<a class="facebook" href="https://www.facebook.com/ForestCityNursingCenter"> </a>
-						<a class="linkedIn" href="http://www.linkedin.com"> </a>
+						<a class="linkedIn" href="https://www.linkedin.com/company/10405200?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10405200%2Cidx%3A2-1-2%2CtarId%3A1452860236111%2Ctas%3Aforest%20city%20nurs"> </a>
 						<a class="email" href="mailto:fcnc@echoes.net"> </a>
 					 </div>
 					 
 				</div> <!-- .col-md-4 -->
 				<div class="col-md-4 footerCopyright">
 					<p>&copy; 2015 Forest City Nursing & Rehab Center</p>
+					 <h6>915 Delaware Street Forest City PA, 18421</h6>
+					<h4>(570) 785-3005</h4>
 				</div> <!-- .col-md-4 -->
 				<div class="col-md-4 footerImageContainer">
 					<a href="/"> 
@@ -239,6 +254,7 @@
 	
 	<script src="/libraries/jquery/jquery-1.11.3.min.js"></script>
 	<script src="/libraries/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script src="/libraries/jquery/jquery-ui-1.11.4/jquery-ui.min.js"></script>	
 	
 	<script src="/libraries/fullcalendar-2.5.0/lib/moment.min.js"></script>
 	<script src="/libraries/fullcalendar-2.5.0/fullcalendar.js"></script>

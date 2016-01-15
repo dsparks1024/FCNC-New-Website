@@ -25,6 +25,7 @@ $(document).keydown(function(e) {
 	var	tileEditorForm = ".tileEditorForm";
 	var pageEditorTileContainer = ".pageEditorTileContainer";
 	var createNewTileBtn;
+	var saveTilesBtn;
 		
 function initPageEditor(e){
 	e.preventDefault();
@@ -35,6 +36,7 @@ function initPageEditor(e){
 		method: "get",
 		success: loadToDOM
 	});
+	
 	function loadToDOM(html){ 
 		pageEditorDOM = $.parseHTML(html);
 		content.html(pageEditorDOM[0]);
@@ -42,11 +44,13 @@ function initPageEditor(e){
 		
 		// Initialize pageEditor Selectors
 		pageNameSelect = $(document).find(".pageNameSelect");
-		createNewTileBtn = $(document).find("#createNewTileBtn");		
+		createNewTileBtn = $(document).find("#createNewTileBtn");	
+		saveTilesBtn = $(document).find("#saveTilesBtn");	
 				
 		// Register pageEditor Evnet Listeners
 		pageNameSelect.on("change",displayPageTiles);
 		createNewTileBtn.on("click",addNewContentTile);
+		saveTilesBtn.on("click",saveContentTileData);
 		
 		// Populate the pageName select field
 		$.ajax({
@@ -54,9 +58,13 @@ function initPageEditor(e){
 			data: {getPagenameList:"true"},
 			success: success
 		});
+		
 		function success(html){
 			pageNameSelect.append(html);
-		}	
+		}
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})	
 	}
 }
 
@@ -75,7 +83,8 @@ function displayPageTiles(e){
 		
 		var i = 0;
 		var tile = pageEditorDOM[2];
-
+		console.log(data);
+		
 		for(i=0; i<data.length;i++){
 			$(tile).attr("id",data[i].id);
 			$(tile).find(".idInput").val(data[i].id);
@@ -83,6 +92,7 @@ function displayPageTiles(e){
 			$(tile).find(".pageNameInput").val(data[i].pageName);
 			$(tile).find(".tileLayoutInput").val(data[i].layout);
 			$(tile).find(".tileOrderInput").val(data[i].order);
+			$(tile).find(".col12Input").val(data[i].col12);
 			$(tile).find(".col1Input").text(data[i].col1);
 			$(tile).find(".col2Input").text(data[i].col2);
 			$(tile).clone().appendTo(content);

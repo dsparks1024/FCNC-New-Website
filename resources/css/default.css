@@ -10,30 +10,37 @@ html, body{
 /* Push the footer to the bottom of the screen */
 .wrapper{
 	min-height: 100%;
-	margin: 0 auto -205px;
+	margin: 0 auto -235px;
 }
-footer, .push{
-	height: 205px;
+/* Footer Styling */
+footer.mainFooter{
+	height: 235px;
 }
 
-footer{
+.push{
+	height: 235px;
+}
+
+footer.mainFooter{
 	background-image: url('/resources/css/images/footerBGPattern.png');
-	background-repeat: repeat-x;
+	background-repeat: repeat-x repeat-y;
 	color: white;
 	text-align: center;
 	padding-top: 25px;
 	box-shadow: rgba(0, 0, 0, 0.49) 0px 8px 15px 2px inset;
 }
-footer .footerCopyright{
-	height: 55px;
-}
-footer .footerCopyright p{
-	padding:35px 0px 0px 0px;
+
+footer.mainFooter .footerCopyright p{
+	padding:0px;
 	margin:0px;
 }
+footer.mainFooter .footerCopyright h6,footer .footerCopyright h4{
+	margin: 2px;
+}
 footer .footerLinks{
-	height: 100px;
-	padding-top: 3px;
+	height: 135px;
+	padding-top: 0px;
+
 }
 footer .footerBottom{
 	padding-top: 15px;
@@ -75,6 +82,34 @@ footer .footerImageContainer{
 }
 footer .footerImageContainer a{
 	float: right;
+}
+
+footer .footerLinks li.linkHeader{
+	font-size: 15pt;
+	list-style: none;
+	margin-left: -15px;
+	font-family: 'Marcellus SC', serif;
+}
+
+footer .footerLinks li{
+	list-style: none;
+	text-align: left;
+	white-space: nowrap;
+}
+
+footer .socialMediaLinks{
+	list-style: none;
+	display: flex;
+}
+footer .socialMediaLinks img{
+	height: 50px;
+	padding-left: 5px;
+}
+footer.mainFooter a{
+	color: white;
+}
+footer.mainFooter a:hover{
+	color: #d1d1d1;
 }
 /* End of footer styling */
 
@@ -147,6 +182,7 @@ footer .footerImageContainer a{
 #mainNav .dropdown-menu{
 	background: maroon;
 	text-align: center;
+
 }
 #mainNav .navbar-collapse{
 	border: none;
@@ -198,37 +234,13 @@ footer .footerImageContainer a{
 }
 /* End of nav bar styling */
 
-/* Footer Styling */
-footer .footerLinks li.linkHeader{
-	font-size: 14pt;
-	list-style: none;
-	margin-left: -15px;
-}
-
-footer .footerLinks li{
-	list-style: none;
-	text-align: left;
-}
-
-footer .socialMediaLinks{
-	list-style: none;
-	display: flex;
-}
-footer .socialMediaLinks img{
-	height: 50px;
-	padding-left: 5px;
-}
-
-/* End Footer Styling */
-
-
-
 /* Content Tile Default Styling */
 
 /* Adjust margins for tiles used as page content to fill entiere width of viewport */
 #pageContent.container-fluid{
 	padding-right: 0px;
 	padding-left: 0px;
+	min-height: 100%;
 }
 #pageContent .row{
 	margin-left: 0px;
@@ -255,6 +267,9 @@ footer .socialMediaLinks img{
 	font-size: 16pt;
 	color: #696969;
 }
+.contentTile .textBlockContainer{
+	margin-top: 15px;
+}
 .contentTile p{
 	font-weight: 200;
 	font-size: 12pt;
@@ -268,15 +283,15 @@ footer .socialMediaLinks img{
 .contentTile .contentTileImgContainer {
 	padding-top: 5%;
 }
-.contentTile .btn-maroon{
-	background: maroon;
-	color: white;
-}
 
 .contentTile img{
 	height: 375px;
 	width: 375px;
 	box-shadow: 1px 3px 4px 0px #505050;
+}
+
+.contentTile.fillPage{
+	height: 100%;
 }
 
 #pageContent .contentTile:first-child{
@@ -399,7 +414,7 @@ footer .socialMediaLinks img{
 	padding-right: 10px;
 }
 
-#slide1{
+#slide2{
 	background-image:  url('/resources/images/NursingCenter1.png');
 	background-position: 50% 100%;
 	background-size: cover;
@@ -407,8 +422,8 @@ footer .socialMediaLinks img{
 	background-attachment: scroll;
 }
 
-#slide2{
-	background-image: url('/resources/images/NursingCenter2.jpg');
+#slide1{
+	background-image: url('/resources/images/NursingCenter2Edited.jpg');
 	background-position: 50% 80%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -426,5 +441,21 @@ footer .socialMediaLinks img{
 #calendar{
 	max-width: 900px;
 	margin: 0 auto;
-	
+}
+
+.titleAcronym{
+	font-size: 16pt;
+}
+
+.btn-maroon{
+	background: maroon;
+	color: white;
+}
+.btn-maroon:hover,.btn-maroon:active,.btn-maroon:focus{
+	color: #dddddd;
+	background: #5e0000;
+}
+
+.thumbnailNav .thumbnail{
+
 }

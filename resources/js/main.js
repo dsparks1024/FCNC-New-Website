@@ -6,8 +6,6 @@
 	var commentForm;
 	var commentFormSubmitBtn;
 	
-	var datePickerBtn;
-
 $(document).ready(init);
 
 function init(){
@@ -15,9 +13,9 @@ function init(){
 	
 	
 	// Initialize Global Selectors
-	searchForm = $("#searchForm");
-	searchInput = $("#searchInput");
-	searchSubmitBtn =  $("#submitSearch");
+	searchForm = $(".searchForm");
+	searchInput = $(".searchInput");
+	searchSubmitBtn =  $(".submitSearch");
 	
 	commentForm = $("#commentForm");
 	commentFormSubmitBtn = $("#submitComment");
@@ -30,9 +28,13 @@ function init(){
 	
 	commentForm.on("submit",submitCommentForm);
 	
-	datePickerBtn.on("click",initDatePicker);
 	
 	//setTimeout(function(){location.reload()}, 200);
+	
+	$("#desiredDate").datepicker({
+		minDate: new Date(),
+		maxDate: "+8m"
+	});
 	
 	var y;
 	var y1;
@@ -105,7 +107,13 @@ function initializeGoogleMaps() {
 
 function submitSearchQuery(e){
 	e.preventDefault();
-	window.location = "/search?q="+searchInput.val();
+	var query;
+	$.each(searchInput,function(){
+		if( $(this).val() != ''){
+			query = $(this).val();
+		}
+	})
+	window.location = "/search?q="+query;
 }
 
 function submitCommentForm(e){
@@ -126,9 +134,6 @@ function completedAction(response){
 	}
 }
 
-function initDatePicker(){
-	alert("date");
-}
 
 function getURLParam(param) {
     location.search.substr(1)

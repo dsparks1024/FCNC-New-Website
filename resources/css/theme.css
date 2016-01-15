@@ -28,7 +28,7 @@
 }
 .grayPattern h1, .grayPattern h3{
 	color: white;
-	font-weight: 400;
+	font-weight: 300;
 	text-shadow: 1px 2px 2px black; 
 }
 
@@ -81,4 +81,20 @@
 
 .calendarContainer{
 	
+}
+
+.rehabFullTileImage{
+	height: 400px;
+	background: url('/resources/images/therapy3.jpg');
+	background-position: center 25%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+.testimonials{
+	background: #e8e8e8;
+}
+.testimonials blockquote{
+	border-color: #b7b7b7;
 }

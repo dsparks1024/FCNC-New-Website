@@ -23,12 +23,16 @@ if(isset($_GET['getPageTiles'])){
 	$results = $db->retrieve();
 	$tableRow = $results->getRow();
 	$tileArray = array();
-	// Get tile assocaited with given page§
+	// Get tiles assocaited with given page
+	
 	foreach($tableRow as $tile){
 		if($tile['pageName'] == $_GET['pageName']){
 			array_push($tileArray, $tile);
 		}
 	}	
+	// Sort Tiles by tileOrder
+	//uasort($tileArray, 'sortByTileOrder');
+
 	echo json_encode($tileArray);
 }
 	
@@ -83,3 +87,13 @@ function getPageNames($db){
 	return $pageArray;
 }
 
+function sortByTileOrder($a,$b){
+	return (integer)$a['order'] > (integer)$b['order'];	
+}
+
+function escapeJsonString($value) { # list from www.json.org: (\b backspace, \f formfeed)
+    $escapers = array("\\", "/", "\"", "\n", "\r", "\t", "\x08", "\x0c");
+    $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
+    $result = str_replace($escapers, $replacements, $value);
+    return $result;
+}

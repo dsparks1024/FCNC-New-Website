@@ -1,4 +1,4 @@
-<?
+<?	
 	session_start();	
 	
 	include_once($_SERVER['DOCUMENT_ROOT'].'/globalConfig.php');
@@ -31,13 +31,14 @@
        $query = $db->query("SELECT * FROM users WHERE `username`='$username'");
        
        if($query->num_rows != 1){
-           echo('wrong');
+           echo('invalid');
        }else{
            $array = $query->fetch_assoc();
            if($password == $array['password']){
                $auth = $array['authorization'];
                logUserIn($username,$auth);
-               header("Location: /employee/");
+               echo("valid");
+               //header("Location: /employee/");
            }else{
                echo 'notFound';
            }
@@ -48,5 +49,6 @@
     function logUserIn($username,$auth){
         $_SESSION['username'] = $username;
         $_SESSION['auth'] = $auth;
+        $_SESSION['loginTime'] = time();
     }
 ?>

@@ -110,7 +110,7 @@ function displayHTML($contentTileArray){
 				$row = new html_element("div");
 				$row->set("class","row");
 				$col = new html_element("div");
-				$col->set("class","col-md-12");
+				$col->set("class","col-md-12 ".$tile['col12']);
 				$col->set("text",$tile['col1']);
 				$row->inject($col);
 				echo $row->build();
