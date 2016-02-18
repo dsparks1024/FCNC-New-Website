@@ -2,7 +2,9 @@
 	
 function renderEmployeePageContent($pageName){
 	
-	$db = new Database("fcncContent.db.6441590.hostedresource.com","fcncContent","Fcnc@915","fcncContent");
+	//$db = new Database("107.180.51.84","fcncContent","Fcnc@915","fcncContent");
+	$db = new Database("localhost","root","root","FCNC_v3.0");
+
 	$db->setTable("employeePages");
 	// If varables have not been set, display the home page
 	if($pageName == ''){

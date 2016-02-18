@@ -2,7 +2,7 @@
 /* Applies Look and Feel styling to page elements Forest City Nursing & Rehab Center Website */
 /* Copyright 2015 Forest City Nursing & Rehab Center */
 /* Written By: Dominick Sparks */
-/* Last Updated: */
+/* Last Updated: 1-15-2016 */
 
 .mediaTile{
 	background: #c9c9c9;	
@@ -61,6 +61,7 @@
 }
 
 .sendMessage{
+	min-height: 700px;
 	background: url('/resources/css/images/guestBook.jpg');
 	background-position:left center;
 	background-size: cover;
@@ -77,6 +78,9 @@
 	border-radius: 15px;
 	width: 80%;
 	margin: auto;
+}
+.sendMessage form#commentForm{
+	margin-top: 100px;
 }
 
 .calendarContainer{
@@ -97,4 +101,27 @@
 }
 .testimonials blockquote{
 	border-color: #b7b7b7;
+}
+
+#rehabSlide1{
+	background-image: url('/resources/images/therapy5.jpg');
+	background-position: 50% 25%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+#rehabSlide2{
+	background-image: url('/resources/images/therapy6.jpg');
+	background-position: 50% 25%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+#rehabSlide3{
+	background-image: url('/resources/images/therapy7.jpg');
+	background-position: 50% 25%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
 }

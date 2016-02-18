@@ -1,6 +1,8 @@
 <?
 	include_once($_SERVER['DOCUMENT_ROOT'].'/globalConfig.php');
-	$db = new Database('fcncContent.db.6441590.hostedresource.com','fcncContent','Fcnc@915','fcncContent');
+	//$db = new Database("107.180.51.84","fcncContent","Fcnc@915","fcncContent");
+	$db = new Database("localhost","root","root","FCNC_v3.0");
+
 	$db->setTable('contentTiles');
 	
 	

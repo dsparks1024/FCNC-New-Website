@@ -1,12 +1,3 @@
-<!--
-
-	Check #navbarLineContainer css3 fix is complient on all browers (IE 8+)
-		- The div was over the nav links and rendered them unclickable...
-		
-	Google Calender API KEY: 	AIzaSyCYO4ZUyfv1YA4q2n9Hi3LaPpr7gLlYlHs
-		
--->
-
 <? include_once('globalConfig.php') ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<title>Forest City Nursing & Rehab Center</title>
-		<link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300' rel='stylesheet' type='text/css'>
+				
+		<link href="http://fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link href="/libraries/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/resources/css/default.css" rel="stylesheet">
@@ -29,11 +21,26 @@
 	</head>
 	
 	<body>
+	<noscript>
+	<div class="text-center text-danger">
+		<h1><span class="glyphicon glyphicon-warning-sign text-warning"></span> JavaScript Disabled... <span class="glyphicon glyphicon-warning-sign text-warning"></span></h1>
+		<h4>We can not guarantee that this site with function properly.</h4>
+		<h4>Please enable JavaScript and reload this page.</h4><br><br>
+	</div>
+	</noscript>
 	
-	<!--
-	<span class="visible-xs">SIZE XS</span><span class="visible-sm">SIZE SM</span><span class="visible-md">SIZE MD</span><span class="visible-lg">SIZE LG</span>
-	-->
-
+	
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-73701010-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	
+	
 	<header>
 			<nav class="navbar navbar-default" id="mainNav">
 				<div class="container-fluid">
@@ -104,7 +111,6 @@
 							</li>
 						</ul>
 					</div> <!-- .collase navbar-collapse #mainNavigation -->
-					</div>  <!-- .navbar-header -->
 				</div> <!-- .containter-fluid -->
 			</nav>
 		</header>
@@ -112,60 +118,9 @@
 	<div class="wrapper">		
 		<main>
 			<div class="container-fluid" id="pageContent">
-				<? 
-					if($_GET['category'] == '' && $_GET['pageName'] == ''){
-						echo "<div class='row contentTile>'>
-							<div id='carousel-example-generic' class='carousel slide' data-ride='carousel'>
-								  <!-- Indicators -->
-								  <ol class='carousel-indicators'>
-								    <li data-target='#carousel-example-generic' data-slide-to='0' class='active'></li>
-								    <li data-target='#carousel-example-generic' data-slide-to='1'></li>
-								    <li data-target='#carousel-example-generic' data-slide-to='2'></li>
-								  </ol>
-								
-								  <!-- Wrapper for slides -->
-								  <div class='carousel-inner' role='listbox'>
-								  	<div class='item active' id='slide1'>
-								      
-								      <div class='carousel-caption'>
-								       <h5>Welcome to the </h5>
-								       <h2>Forest City Nursing & Rehab Center</h2>
-								      </div>
-								    </div>
-								    <div class='item' id='slide2'>
-								      <div class='carousel-caption'>
-								       <h1> </h1>
-								      </div>
-								    </div>
-								    <div class='item' id='slide3'>
-								      <div class='carousel-caption'>
-								        <h1> Happy Holidays! </h1>
-								        <h4>From all of the staff at the Forest City Nursing Center</h4>
-								      </div>
-								    </div>
-								    
-								  </div>
-								
-								  <!-- Controls -->
-								  <a class='left carousel-control' href='#carousel-example-generic' role='button' data-slide='prev'>
-								    <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
-								    <span class='sr-only'>Previous</span>
-								  </a>
-								  <a class='right carousel-control' href='#carousel-example-generic' role='button' data-slide='next'>
-								    <span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
-								    <span class='sr-only'>Next</span>
-								  </a>
-								</div>
-						</div> <!-- .row -->";
-					}	
-				?>
-				<? displayPageContent($_GET['category'],$_GET['pageName']); 	
-					
-				?>
+			
+				<? displayPageContent($_GET['category'],$_GET['pageName']); ?>
 				
-				
-				
-					
 			</div> <!-- .contianer-fluid -->
 		</main>	
 		
@@ -175,6 +130,7 @@
 	<footer class="mainFooter">
 		<div class="container-fluid">
 			<div class="row footerLinks hidden-xs">
+				<div class="col-md-1"></div>
 				<div class="col-md-2">
 					<ul> 
 						<li class="linkHeader">Services</li>
@@ -197,34 +153,26 @@
 				<div class="col-md-2">
 					<ul> 
 						<li class="linkHeader">Our Team</li>
-						<li>Staff Directory</li>
-						<li>Join Our Team</li>
-						<li><a href="/employee">Employee Login</a></li>
-					</ul>
-				</div> <!-- .col-md-2 -->
-				<div class="col-md-2">
-					<ul> 
-						<li class="linkHeader">About Us</li>
-						<li>Directions</li>
-						<li>History</li>
-						<li>Image Gallery</li>
+						<li><a href="/contact/staff">Staff Directory</a></li>
+						<li><a href="/information/employment">Join Our Team</a></li>
+						<!--<li><a href="/employee">Employee Login</a></li>-->
 					</ul>
 				</div> <!-- .col-md-2 -->
 				<div class="col-md-2">
 					<ul> 
 						<li class="linkHeader">Contact Us</li>
-						<li>Send a Message</li>
-						<li>Leave Feedback</li>
+						<li><a href="/contact/contactInformation">Information</a></li>
+						<li><a href="/contact/sendMessage">Send a Message</a></li>
 					</ul>
 				</div> <!-- .col-md-2 -->
 				<div class="col-md-2">
 					<ul> 
 						<li class="linkHeader">Information</li>
-						<li>Admission Info</li>
-						<li>Schedule a Tour</li>
+						<li><a herf="/information/admissions">Admission Info</a></li>
+						<li><a href="/information/admissions">Schedule a Tour</a></li>
 					</ul>
 				</div> <!-- .col-md-2 -->
-				
+				<div class="col-md-1"></div>
 			</div> <!-- .row -->
 			
 			<div class="row footerBottom">
@@ -265,11 +213,7 @@
 	<script src="/resources/js/gCalendar.js"></script>
 	
 	<script>$('.carousel').carousel()</script>
-	
-	
-
 		
-	
 	</body>
 	
 </html>

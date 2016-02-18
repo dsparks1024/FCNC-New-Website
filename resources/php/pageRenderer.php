@@ -7,7 +7,9 @@ include_once($root."/libraries/php/pageTile.php");
 
 function displayPageContent($category,$pageName){
 	
-	$db = new Database("fcncContent.db.6441590.hostedresource.com","fcncContent","Fcnc@915","fcncContent");
+	//$db = new Database("107.180.51.84","fcncContent","Fcnc@915","fcncContent");
+	$db = new Database("localhost","root","root","FCNC_v3.0");
+	
 	$db->setTable("contentTiles");
 	// If varables have not been set, display the home page
 	if($category == '' && $pageName == ''){
@@ -57,31 +59,7 @@ function displayHTML($contentTileArray){
 		// get the layout for the current tile and render using proper HTML
 		switch ( intval($tile['layout']) ){
 			case 1: // Default 2 column layout with with alternating columns.		
-				$row = new pageTile("");
-				if($count % 2 == 0){
-					$row->addTextColumn($tile['col1'],"col-md-push-6");
-					$row->addTextColumn($tile['col2'],"col-md-pull-6");
-
-				}else{
-					$row->addTextColumn($tile['col1'],"");
-					$row->addTextColumn($tile['col2'],"");
-				}	
-				echo $row->build();
-			break;
-
-			case 2: // Media tile w/ background and image
-				// col1 contains an image
-				// col2 contains the header text
-				// col3 contains the body of text
-				$row = new pageTile("mediaTile");
-				$row->addImageColumn("/resources/images/PersonalCare.png","");
-				$row->addTextColumn($tile['col3'],"");
-				echo $row->build();
-				
-			break;
-			
-			case 3:
-				$row = new pageTile($tile['col12']);
+				$row = new pageTile("contentTile ".$tile['containerClass']);
 				if($count % 2 == 0){
 					$row->addTextColumn($tile['col1'],"col-md-push-6");
 					$row->addTextColumn($tile['col2'],"col-md-pull-6");
@@ -93,15 +71,20 @@ function displayHTML($contentTileArray){
 				echo $row->build();
 			break;
 			
+			case 2: // Image Slider layout
+				$row = new pageTile("contentTile ".$tile['containerClass']);
+				echo "NOT IMPLEMENTED";
+			break;
+						
 			case 4: // Employee directory display
-				$row = new pageTile("employeeBio");
+				$row = new pageTile("contentTile employeeBio");
 				$row->addsmTextColumn($tile['col1'],"");
 				$row->addsmTextColumn($tile['col2'],"");
 				echo $row->build();
 			break;
 			
 			case 5: // Custom Layout, create row and insert col1 data
-				$row = new pageTile($tile['col12'] ); // REMOVED ." hidden-xs"
+				$row = new pageTile( $tile['containerClass'] ); // REMOVED ." hidden-xs"
 				$row->setText($tile['col1']);
 				echo $row->build();
 			
