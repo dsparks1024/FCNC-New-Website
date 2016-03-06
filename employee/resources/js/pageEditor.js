@@ -81,11 +81,31 @@ function displayPageTiles(e){
 		// Remove prevously existing editable tiles before new ones are added
 		$(document).find($(pageEditorTileContainer).remove());
 		
-		var i = 0;
+		var i = 0;		
 		var tile = pageEditorDOM[2];
+		var layout1Editor = pageEditorDOM[6];
 		console.log(data);
 		
-		for(i=0; i<data.length;i++){
+		//console.log(pageEditorDOM);
+		
+		for(i=0; i<data.length;i++){			
+			
+			if( data[i].layout == 1){
+				
+			//$(layout1Editor).find(".firstH4").val( data[i].col1.find("h4") );
+			
+			col1Html = $( data[i].col1 );
+			
+			$(layout1Editor).find(".firstH4").val( col1Html.children(0).html() );
+			$(layout1Editor).find(".firstH1").val( col1Html.children(1).html() );
+			$(layout1Editor).find(".secondH4").val( col1Html.children(2).html() );	
+		
+			
+			console.log( col1Html.children(1) )	
+				
+			$(layout1Editor).clone().appendTo(content);
+			}else{
+				
 			$(tile).attr("id",data[i].id);
 			$(tile).find(".idInput").val(data[i].id);
 			$(tile).find(".categoryInput").val(data[i].category);
@@ -96,6 +116,8 @@ function displayPageTiles(e){
 			$(tile).find(".col1Input").text(data[i].col1);
 			$(tile).find(".col2Input").text(data[i].col2);
 			$(tile).clone().appendTo(content);
+			}			
+			
 		}
 	}
 }
