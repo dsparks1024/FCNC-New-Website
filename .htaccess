@@ -1,6 +1,8 @@
-
 RewriteEngine 	On
-RewriteRule 	^employee/([.]+)?$						employee/index.php?$1							[NC,L]		# Do not modify any requests dealing with the employee site or CMS
+RewriteRule 	^employee/([.]+)?$						employee/index.php?$1					[NC,L]		# Do not modify any requests dealing with the employee site or CMS
+
+# Redirect all references from the old website to the homepage of the new website
+
 
 # Rewrite anything following /pageName
 # Capture the pageName(%1) in a variable

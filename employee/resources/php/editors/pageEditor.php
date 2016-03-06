@@ -1,7 +1,9 @@
 <?
 	include_once($_SERVER['DOCUMENT_ROOT'].'/globalConfig.php');
-	//$db = new Database("107.180.51.84","fcncContent","Fcnc@915","fcncContent");
-	$db = new Database("localhost","root","root","FCNC_v3.0");
+	
+	// Settings defined in "/globalConfig.php"
+	$db = new Database(MYSQL_SERVER_ADDRESS,MYSQL_USERNAME,MYSQL_PASSWORD,MYSQL_DB_NAME);
+
 
 	$db->setTable('contentTiles');
 	

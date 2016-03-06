@@ -7,8 +7,8 @@ include_once($root."/libraries/php/pageTile.php");
 
 function displayPageContent($category,$pageName){
 	
-	//$db = new Database("107.180.51.84","fcncContent","Fcnc@915","fcncContent");
-	$db = new Database("localhost","root","root","FCNC_v3.0");
+	$db = new Database(MYSQL_SERVER_ADDRESS,MYSQL_USERNAME,MYSQL_PASSWORD,MYSQL_DB_NAME);
+
 	
 	$db->setTable("contentTiles");
 	// If varables have not been set, display the home page

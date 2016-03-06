@@ -168,7 +168,7 @@
 				<div class="col-md-2">
 					<ul> 
 						<li class="linkHeader">Information</li>
-						<li><a herf="/information/admissions">Admission Info</a></li>
+						<li><a href="/information/admissions">Admission Info</a></li>
 						<li><a href="/information/admissions">Schedule a Tour</a></li>
 					</ul>
 				</div> <!-- .col-md-2 -->
@@ -181,7 +181,7 @@
 					 <div class="socialMediaLinks">
 						<a class="facebook" href="https://www.facebook.com/ForestCityNursingCenter"> </a>
 						<a class="linkedIn" href="https://www.linkedin.com/company/10405200?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10405200%2Cidx%3A2-1-2%2CtarId%3A1452860236111%2Ctas%3Aforest%20city%20nurs"> </a>
-						<a class="email" href="mailto:fcnc@echoes.net"> </a>
+						<a class="email" href="mailto:fcnc@echoes"> </a>
 					 </div>
 					 
 				</div> <!-- .col-md-4 -->
